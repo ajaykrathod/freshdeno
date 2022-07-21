@@ -1,0 +1,49 @@
+nav {
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    background-color: black;
+}
+
+ul {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    color: white;
+    cursor: pointer;
+    margin-left: 3vw;
+}
+
+.title:hover {
+    text-shadow: 3px 3px gray;
+    transition: all 1s ease;
+}
+li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+li:hover {
+    border: 3px solid white;
+    transition: all 1s ease-out;
+}
+
+li:active {
+    box-shadow: 1px 1px #666;
+    transform: translateY(4px);
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: large;
+}

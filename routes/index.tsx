@@ -1,20 +1,26 @@
 /** @jsx h */
-import { h } from "preact";
+/**  @jsxFrag Fragment */
+import { Fragment, h } from "preact";
 import Counter from "../islands/Counter.tsx";
+import { Handlers, PageProps} from "$fresh/server.ts";
+import { Head, asset } from "$fresh/runtime.ts";
+import Header from "../islands/Header.tsx";
+import Index from "../islands/Index.tsx";
+
 
 export default function Home() {
   return (
-    <div>
-      <img
-        src="/logo.svg"
-        height="100px"
-        alt="the fresh logo: a sliced lemon dripping with juice"
-      />
-      <p>
-        Welcome to `fresh`. Try update this message in the ./routes/index.tsx
-        file, and refresh.
-      </p>
-      <Counter start={3} />
-    </div>
+    <>
+      <Head>
+        <title>FreshDeno</title>
+        <link rel="stylesheet" href={asset("/global.css")} />
+      </Head>
+      <body>
+        <Header/>
+        <div className="index">
+            <Index/>
+        </div>
+      </body>
+    </>
   );
 }
