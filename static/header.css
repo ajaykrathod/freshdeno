@@ -6,7 +6,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
     background-color: black;
 }
 
@@ -46,4 +47,10 @@ a {
     font-weight: bold;
     text-decoration: none;
     font-size: large;
+}
+
+@media(max-width:350px){
+    ul {
+        width: 50vw;
+    }
 }

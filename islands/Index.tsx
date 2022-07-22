@@ -44,7 +44,7 @@ const Index = () => {
     }
   return (
     <div>
-        {error && <div class="errorDiv">
+        {error && token && <div class="errorDiv">
         <h2>{error}</h2>
                 <button onClick={handleTakeLogin}>Take Me to Login</button>
             </div>}

@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 .index {
@@ -19,6 +19,7 @@ body {
 }
 
 .errorDiv h2, .userDiv h2 {
+    word-wrap: break-word;
     font-size: x-large;
     color: gray;
 }
@@ -41,5 +42,15 @@ body {
 .errorDiv button:active {
     box-shadow: 1px 1px #666;
     transform: translateY(3px);
-  }
+}
 
+@media(max-width:400px){
+    .errorDiv, .userDiv {
+        margin: 40vh 15vw;
+    }
+}
+@media(max-width:350px){
+    .errorDiv, .userDiv {
+        margin: 40vh 8vw;
+    }
+}
