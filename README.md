@@ -7,4 +7,4 @@ Project Demonstarting the JWT authentication with [Deno](https://deno.land/) and
 
 ### URL
 
-[FreshDeno](hhttps://fresherdeno.deno.dev/)
+[FreshDeno](https://fresherdeno.deno.dev/)
