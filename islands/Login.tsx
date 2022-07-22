@@ -8,6 +8,7 @@ function Login() {
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
   const [email, setEmail] = useState("")
   const [error, setError] = useState("")
+  const [message, setMessage] = useState()
   const handleClick = async(event) => {
     
     if(!emailRegex.test(email)){
@@ -21,7 +22,8 @@ function Login() {
             method:"post",
             body: email
         })
-
+        setMessage("Login Successfull")
+        
         const body =  await resp.body?.getReader().read();
         const items = JSON.parse(new TextDecoder().decode(body?.value))
 
@@ -30,6 +32,10 @@ function Login() {
         localStorage.setItem("EMail",items.email)
         localStorage.setItem("Public",items.publicKey)
 
+        
+        setTimeout(() => {
+          window.location.href = "/"
+        }, 4000)
         // Let us open our database
         // const request = window.indexedDB.open("Selective", 1);
         // request.onsuccess = event => {
@@ -56,6 +62,7 @@ return (
             <div className="emailError">{error}</div>
             <button onClick={handleClick}>Login</button>
     </div>
+    <div className={message && "message"}>{message}</div>
   </>
 )
 }

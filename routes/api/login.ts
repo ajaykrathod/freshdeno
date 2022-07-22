@@ -28,7 +28,7 @@ export const handler = async(_req: Request, _ctx: HandlerContext) => {
         .setIssuedAt()
         .setIssuer('freshdeno')
         .setAudience(email)
-        .setExpirationTime('30s')
+        .setExpirationTime('2h')
         .sign(privateKey)
         
         const body = JSON.stringify({jwt,email,publicKey:spkiPem})

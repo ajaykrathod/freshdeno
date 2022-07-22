@@ -6,9 +6,11 @@ import {useEffect, useState} from 'preact/hooks'
 const Index = () => {
     const [error, setError] = useState("")
     const [user, setUser] = useState({})
+    const [token, setToken] = useState()
     useEffect(async() => {
         if(localStorage.getItem("Token") && localStorage.getItem("EMail") && localStorage.getItem("Public")){
             const token = localStorage.getItem("Token")
+            setToken(localStorage.getItem("Token"))
             const email = localStorage.getItem("EMail")
             const publicKey = localStorage.getItem("Public")
     
@@ -30,6 +32,9 @@ const Index = () => {
                 setError("Your session expired, You will need to login again")
             }
         }
+        else{
+            setError("Your session expired, You will need to login again")
+        }
         
     },[])
 
@@ -39,11 +44,15 @@ const Index = () => {
     }
   return (
     <div>
-        {error && <div>
+        {error && <div class="errorDiv">
+        <h2>{error}</h2>
+                <button onClick={handleTakeLogin}>Take Me to Login</button>
+            </div>}
+        {error && !token && <div class="errorDiv">
                 <h2>{error}</h2>
                 <button onClick={handleTakeLogin}>Take Me to Login</button>
             </div>}
-            {!error && <div>
+            {!error && token && <div class="userDiv">
                     <h2>
                         Hey, {user.email}
                     </h2>

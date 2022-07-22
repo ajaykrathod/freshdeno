@@ -1,11 +1,10 @@
-# fresh project
+# FreshDeno
 
-### Usage
+### Description
 
-Start the project:
+Project Demonstarting the JWT authentication with [Deno](https://deno.land/) and [Jose](https://github.com/panva/jose)
 
-```
-deno task start
-```
 
-This will watch the project directory and restart as necessary.
+### URL
+
+[FreshDeno](hhttps://fresherdeno.deno.dev/)

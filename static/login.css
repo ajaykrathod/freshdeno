@@ -51,7 +51,7 @@ body {
     outline: none;
     border: none;
     padding: 5px 20px;
-    font-size: large;
+    font-size: medium;
     color: white;
     background-color: darkmagenta;
 }
@@ -59,4 +59,28 @@ body {
 .loginContainer button:active {
     box-shadow: 1px 1px #666;
     transform: translateY(3px);
-  }
+}
+
+.message {
+    animation: incoming 3s forwards 1s;
+    position: absolute;
+    top: 70vh;
+    opacity: 0;
+    right: 0vw;
+    padding: 10px 30px;
+    background-color: purple;
+    border-radius: 30px 0px;
+    color: white;
+    font-size: large;
+}
+
+@keyframes incoming {
+    from {
+        right: 0vw;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        right: 30vw;
+    }
+}

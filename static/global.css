@@ -1,9 +1,45 @@
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .index {
     position: relative;
     top: 8vh;
 }
+
+.errorDiv, .userDiv {
+    width: 60vw;
+    height: 20vh;
+    display: grid;
+    place-items: center;
+    margin: 35vh auto;
+}
+
+.errorDiv h2, .userDiv h2 {
+    font-size: x-large;
+    color: gray;
+}
+
+.errorDiv h2:hover, .userDiv h2:hover {
+    color: black;
+    transition: all 1s ease-in;
+}
+
+.errorDiv button {
+    border-radius: 25px 0px;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: large;
+    color: white;
+    background-color: darkmagenta;
+}
+
+.errorDiv button:active {
+    box-shadow: 1px 1px #666;
+    transform: translateY(3px);
+  }
+
